@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VS Tracker - Dashboard</title>
+    <link rel="stylesheet" href="C:\Users\Hi\Desktop\tracker\style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="bg-circles">
+        <div class="circle c1"></div>
+        <div class="circle c2"></div>
+    </div>
+
+    <div class="glass-container">
+        <header>
+            <a href="index.html" class="back-link">← Back</a>
+            <h2>My Expenses</h2>
+        </header>
+        
+        <div class="input-group">
+            <input type="text" id="expense-name" placeholder="Expense Name (eg... Coffee)">
+            <input type="number" id="expense-amount" placeholder="Amount (eg....15₹)">
+            <button id="add-btn">Add Expense</button>
+        </div>
+
+        <div class="history-section">
+            <h3>Transaction History</h3>
+            <ul id="expense-list">
+                </ul>
+        </div>
+
+        <div class="total-card">
+            <button id="total-btn">Calculate Total</button>
+            <button id="reset-btn">Reset Data</button>
+            <h2 id="total-display">Total: ₹0</h2>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

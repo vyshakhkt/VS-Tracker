@@ -1,0 +1,180 @@
+:root {
+    --primary: #a450ff;
+    --bg-dark: #0f0c29;
+    --glass: rgba(255, 255, 255, 0.1);
+    --text: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: var(--bg-dark);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Keeps bubbles in background */
+    color: var(--text);
+}
+
+/* --- Animated Background --- */
+.bg-circles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: move 10s infinite alternate;
+}
+
+.c1 {
+    width: 300px;
+    height: 300px;
+    background: var(--primary);
+    top: 10%;
+    left: 20%;
+}
+
+.c2 {
+    width: 400px;
+    height: 400px;
+    background: #302b63;
+    bottom: 10%;
+    right: 20%;
+    animation-delay: 2s;
+}
+
+@keyframes move {
+    from { transform: translate(0, 0); }
+    to { transform: translate(50px, 100px); }
+}
+
+/* --- Glassmorphism Card --- */
+.glass-container {
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.5);
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.back-link {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* --- Inputs & Buttons --- */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    border-radius: 10px;
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+button {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#add-btn {
+    background: var(--primary);
+    color: white;
+}
+
+#add-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px var(--primary);
+}
+
+/* --- History List --- */
+.history-section {
+    margin-top: 30px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+ul { list-style: none; }
+
+li {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-left: 4px solid var(--primary);
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* --- Total Section --- */
+.total-card {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+#total-btn, #reset-btn {
+    width: 48%;
+    margin-bottom: 15px;
+    font-size: 0.8rem;
+}
+
+#total-btn { background: #00d2ff; color: #fff; }
+#reset-btn { background: #ff4b2b; color: #fff; }
+
+#total-display {
+    font-size: 1.8rem;
+    margin-top: 10px;
+}
